@@ -58,6 +58,101 @@ b. Dados utilizado para modelagem do problema (dataset);
 c. Passos utilizados para geração de regras;
 d. Regras Geradas.
 Pode-se experimentar os algoritmos Eclat ou FP-Growth como alternativa ao Apriori.
+- Resposta: Com base no codigo gerado, podemos dizer que:
+
+- a. Problema
+O problema em questão é analisar os fatores relacionados à satisfação de passageiros em um aeroporto e como essas variáveis influenciam umas às outras. A ideia é usar regras de associação para identificar padrões entre as características dos passageiros (como idade, gênero, frequência de voos) e suas respostas a diferentes questões, como satisfação com o atendimento.
+
+- b. Dados utilizados para modelagem do problema (dataset)
+O dataset utilizado é um arquivo com informações de passageiros do aeroporto, incluindo dados como:
+
+NETPRO: Índice de recomendação de um serviço (NPS - Net Promoter Score).
+
+Q20Age: Idade do passageiro.
+
+Q21Gender: Gênero do passageiro.
+
+Q22Income: Faixa de renda do passageiro.
+
+Q23FLY: Frequência de voos.
+
+Q5TIMESFLOWN: Quantidade de voos realizados.
+
+Q6LONGUSE: Hábitos de uso do aeroporto.
+
+- c. Passos utilizados para geração de regras
+Os passos que foram seguidos para gerar as regras de associação foram:
+
+Carregamento do Dataset: Os dados foram carregados a partir de um arquivo CSV com o uso da função pd.read_csv.
+
+Seleção de Variáveis: Foram selecionadas algumas variáveis de interesse relacionadas a satisfação e características do passageiro (idade, gênero, renda, frequência de voos, entre outras).
+
+Tratamento de Dados Faltantes: As linhas com dados faltantes foram removidas.
+
+Codificação de Variáveis Categóricas: Variáveis como gênero, renda e frequência de voos foram transformadas em valores numéricos (por meio de codificação LabelEncoder).
+
+Binarização dos Dados: Para aplicar o algoritmo de regras de associação, as variáveis foram transformadas para valores binários (0 ou 1), de acordo com thresholds definidos para diferentes variáveis.
+
+Geração de Itemsets Frequentes: Foi utilizado o algoritmo FP-Growth para encontrar os itemsets frequentes no conjunto de dados binarizado.
+
+Geração de Regras de Associação: Com os itemsets frequentes, foi gerado o conjunto de regras de associação usando a métrica de lift.
+
+- d. Regras Geradas
+Aqui estão algumas das regras geradas pelo algoritmo FP-Growth:
+
+Regra 1:
+
+Antecedente: Quando o passageiro tem uma determinada idade (Q20Age).
+
+Consequente: O passageiro tende a voar frequentemente (Q23FLY).
+
+Suporte: 91.53% dos dados têm essa associação.
+
+Confiança: 97.42% de certeza de que a presença de uma variável implica na outra.
+
+Lift: 1.05, indicando uma leve associação entre idade e a frequência de voos.
+
+Regra 2:
+
+Antecedente: Quando o passageiro voa frequentemente (Q23FLY).
+
+Consequente: O passageiro tem uma determinada idade (Q20Age).
+
+Suporte: 91.53% dos dados têm essa associação.
+
+Confiança: 98.39% de certeza de que a presença de uma variável implica na outra.
+
+Lift: 1.05.
+
+Regra 3:
+
+Antecedente: Quando o passageiro tem uma determinada renda (Q22Income).
+
+Consequente: O passageiro tende a voar frequentemente (Q23FLY).
+
+Suporte: 76.57% dos dados têm essa associação.
+
+Confiança: 82.32% de certeza de que a presença de uma variável implica na outra.
+
+Lift: 1.07, mostrando uma leve associação entre renda e frequência de voos.
+
+Regra 4:
+
+Antecedente: Quando o passageiro tem um determinado gênero (Q21Gender).
+
+Consequente: O passageiro tem uma determinada renda (Q22Income).
+
+Suporte: 76.21% dos dados têm essa associação.
+
+Confiança: 81.13% de certeza de que a presença de uma variável implica na outra.
+
+Lift: 1.05, indicando uma leve associação entre gênero e renda.
+
+Essas são algumas das regras geradas, com base nas variáveis selecionadas. Essas regras indicam padrões interessantes que podem ser úteis para entender as características e comportamentos dos passageiros em relação à sua satisfação com o aeroporto.
+
+Conclusão:
+Sim, com esses resultados, é totalmente possível responder à questão. Você usou FP-Growth para gerar as regras de associação, que relacionam diferentes características dos passageiros com a frequência de voos e outras variáveis. Isso poderia ser aplicado em áreas como marketing, vendas, ou sistemas de recomendação no contexto de aeroportos ou viagens.
+
 3. Seguindo o modelo da questão anterior, apresente um problema em que Regressão Logística é uma alternativa
 a Regressão Linear e apresente (2,0):
 a. Problema;
