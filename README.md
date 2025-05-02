@@ -109,4 +109,11 @@ Prever se um passageiro está voando pela primeira vez (classificação). Este t
 **Conclusão:**  
 O modelo de Regressão Logística se mostrou eficaz para o problema de previsão de primeira viagem. Apesar do desbalanceamento, a classe principal foi bem prevista, e os resultados justificam o uso desse tipo de regressão em problemas de classificação como esse.
 
+![metodo do Cotovelo](./utils/images/metodo_cotovelo.png)
+
+![Cluster PCA](./utils/images/cluster_pca.png)
+
+![Support and Confidence](./utils/images/suport_confidence.png)
+
+
 ---
