@@ -111,7 +111,11 @@ O modelo de Regressão Logística se mostrou eficaz para o problema de previsão
 
 ![metodo do Cotovelo](./utils/images/metodo_cotovelo.png)
 
+
+
 ![Cluster PCA](./utils/images/cluster_pca.png)
+
+
 
 ![Support and Confidence](./utils/images/suport_confidence.png)
 
